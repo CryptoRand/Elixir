@@ -20,10 +20,7 @@ defmodule CryptoRand.MixProject do
 
   defp description do
     """
-
-    Efficient, cryptographically strong versions of several Enum functions that rely on :rand
-    module uniform functions for randomness.
-
+    Efficient, cryptographically strong versions of several Enum functions that rely on :rand module uniform functions for randomness.
     """
   end
 
