@@ -13,6 +13,9 @@ env:
 script:
   - mix test
 
+before_script:  
+  - kerl list installations
+
 after_script:
   - mix deps.get --only docs
   - MIX_ENV=docs mix inch.report
