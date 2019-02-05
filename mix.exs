@@ -28,7 +28,12 @@ defmodule CryptoRand.MixProject do
     [
       maintainers: ["Paul Rogers"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/CryptoRand/Elixir"}
+      links: %{
+        "GitHub" => "https://github.com/CryptoRand/Elixir",
+        "README" => "https://cryptorand.github.io/Elixir/",
+        "Docs" => "https://hexdocs.pm/crypto_rand/api-reference.html"
+      }
     ]
   end
 end
+

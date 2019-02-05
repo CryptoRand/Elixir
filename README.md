@@ -27,7 +27,7 @@ Add `crypto_rand` to `mix.exs` dependencies:
 
 ## <a name="Efficiency"></a>Efficiency
 
-The [source code](http://www.erlang.org/downloads) for the [`:rand`](http://www.erlang.org/doc/man/rand.html) module indicates that at least 55 random bits are required to generate values using [`:rand`](http://www.erlang.org/doc/man/rand.html) functions. So, for example, the call `:rand.uniform(2)`, which returns a value of either `1` or `2`, consumes 55 bits of randomness, even though only 1 bit is actually needed to chose between two values.
+The source code for the [`:rand`](http://www.erlang.org/doc/man/rand.html) module indicates that at least 55 random bits are required to generate values using [`:rand`](http://www.erlang.org/doc/man/rand.html) functions. So, for example, the call `:rand.uniform(2)`, which returns a value of either `1` or `2`, consumes 55 bits of randomness, even though only 1 bit is actually needed to chose between two values.
 
 PRNG methods are sufficiently fast that this inefficient use of randomness is negligible. CSPRNG methods, however, are much slower, and the inefficiency is easily detected. For example, the time (in seconds) required to generate 1 million random integers using `:rand.uniform(8)` with PRNG vs CSPRNG yields:
 
