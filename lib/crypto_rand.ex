@@ -39,7 +39,6 @@ defmodule CryptoRand do
         &Process.delete(&1)
       )
 
-
   @doc """
   Returns a random element of `source`.
 
