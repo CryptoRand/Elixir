@@ -36,4 +36,3 @@ defmodule CryptoRand.MixProject do
     ]
   end
 end
-

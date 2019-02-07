@@ -95,39 +95,12 @@ defmodule CryptoRand.Test.Util do
     end)
   end
 
-  defp find_indexes(string, chars) when is_binary(string) and is_binary(chars),
-    do:
-      find_indexes(
-        string
-        |> String.graphemes(),
-        chars
-        |> String.graphemes()
-      )
-
-  defp find_indexes(str_list, char_list) do
-    {_, ndxs} =
-      str_list
-      |> Enum.reduce({0, []}, fn char, {ndx, ndxs} ->
-        next = ndx + 1
-        if Enum.member?(char_list, char), do: {next, [ndx] ++ ndxs}, else: {next, ndxs}
-      end)
-
-    ndxs
+  def histogram_chi_square_test(len, expect, sample_fn) do
+    histogram = sample_histogram(len * expect, sample_fn)
+    chi_square_test(histogram, chi_square(histogram, expect), len)
   end
 
-  def positions_histogram_test(list, length, trials, fun) when is_list(list) do
-    histogram =
-      1..trials
-      |> Enum.reduce(%{}, fn _, map ->
-        fun.()
-        |> find_indexes(list)
-        |> Enum.reduce(map, &Map.put(&2, &1, (&2[&1] || 0) + 1))
-      end)
-
-    expect = length(list) * trials / length
-
-    chi_square_test(histogram, chi_square(histogram, expect), length)
-  end
+  def size(source), do: if(is_binary(source), do: String.length(source), else: Enum.count(source))
 
   def binary_digits(bytes) do
     bytes
