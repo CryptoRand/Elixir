@@ -1,6 +1,8 @@
 # CryptoRand
 
-`CryptoRand` provides efficient, cryptographically strong versions of several [Enum](https://hexdocs.pm/elixir/Enum.html) functions that rely on [`:rand`](http://www.erlang.org/doc/man/rand.html) __uniform__ for randomness. By default, the [`:rand`](http://www.erlang.org/doc/man/rand.html) functions operate in pseudo-random number generator (PRNG) mode, and hence are not cryptographically secure. To achieve cryptographically strong pseudo-random number generation (CSPRNG) versions, [`:crypto.rand_seed`](http://www.erlang.org/doc/man/crypto.html#rand_seed-0) can be used to force [`:rand`](http://www.erlang.org/doc/man/rand.html) functions into a CSPRNG mode; however, the performance of the `Enum` functions under CSPRNG is approximately _10 times slower_ than under PRNG. This module provides functions that are faster than corresponding `Enum` functions when operating in CSPRNG mode.
+Fast and efficient cryptographically strong versions of several [Enum](https://hexdocs.pm/elixir/Enum.html) functions that rely on [`:rand`](http://www.erlang.org/doc/man/rand.html) __uniform__ functions for randomness.
+
+By default, the [`:rand`](http://www.erlang.org/doc/man/rand.html) functions operate in pseudo-random number generator (PRNG) mode, and hence are not cryptographically secure. To achieve cryptographically strong pseudo-random number generation (CSPRNG) versions, [`:crypto.rand_seed`](http://www.erlang.org/doc/man/crypto.html#rand_seed-0) can be used to force [`:rand`](http://www.erlang.org/doc/man/rand.html) functions into a CSPRNG mode; however, the performance of the `Enum` functions under CSPRNG is approximately _10 times slower_ than under PRNG. This module provides functions that are faster than corresponding `Enum` functions when operating in CSPRNG mode.
 
 [![Build Status](https://travis-ci.org/CryptoRand/Elixir.svg?branch=master)](https://travis-ci.org/CryptoRand/Elixir) &nbsp; [![Hex Version](https://img.shields.io/hexpm/v/crypto_rand.svg "Hex Version")](https://hex.pm/packages/crypto_rand) &nbsp; [![License: MIT](https://img.shields.io/npm/l/express.svg)]()
 
@@ -11,7 +13,7 @@
  - [Process Dictionary](#Process_Dictionary)
  - [Tests](#Tests)
  - [Speed](#Speed)
- - [String Processin](#String_Processing)
+ - [String Processing](#String_Processing)
  - [Caveat Emptor](#Caveat_Emptor)
 
 ## <a name="Installation"></a>Installation

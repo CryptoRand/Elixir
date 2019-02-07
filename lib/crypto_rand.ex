@@ -20,9 +20,9 @@
 defmodule CryptoRand do
   @moduledoc """
 
-  `CryptoRand` provides efficient, crytographically strong versions of several `Enum` functions that
-  rely on [`:rand`](http://www.erlang.org/doc/man/rand.html) __uniform__ for underlying
-  randomness. `CryptoRand` functions also operate on `String.t()` where appropriate.
+  `CryptoRand` provides fast and efficient crytographically strong versions of several `Enum`
+  functions that rely on [`:rand`](http://www.erlang.org/doc/man/rand.html) __uniform__ for
+  underlying randomness. `CryptoRand` functions also operate on `String.t()` where appropriate.
 
   """
 
@@ -34,10 +34,8 @@ defmodule CryptoRand do
   @spec clear() :: :ok
   def clear(),
     do:
-      Enum.each(
-        [:crypto_rand_max, :crypto_rand_bytes],
-        &Process.delete(&1)
-      )
+      [:crypto_rand_max, :crypto_rand_bytes]
+      |> Enum.each(&Process.delete(&1))
 
   @doc """
   Returns a random element of `source`.

@@ -4,7 +4,7 @@ defmodule CryptoRand.MixProject do
   def project do
     [
       app: :crypto_rand,
-      version: "1.0.1",
+      version: "1.0.2",
       elixir: "~> 1.8",
       deps: deps(),
       description: description(),
@@ -20,7 +20,7 @@ defmodule CryptoRand.MixProject do
 
   defp description do
     """
-    Efficient, cryptographically strong versions of several Enum functions that rely on :rand module uniform functions for randomness.
+    Fast and efficient cryptographically strong versions of several Enum functions that rely on :rand uniform functions for randomness.
     """
   end
 
