@@ -20,8 +20,8 @@ defmodule CryptoRand.MixProject do
 
   defp deps,
     do: [
-      {:earmark, "~> 1.3", only: :dev},
-      {:ex_doc, "~> 0.19", only: :dev}
+      {:earmark, "~> 1.4", only: :dev},
+      {:ex_doc, "~> 0.24", only: :dev}
     ]
 
   defp description do
