@@ -4,7 +4,7 @@ defmodule CryptoRand.MixProject do
   def project do
     [
       app: :crypto_rand,
-      version: "1.0.3",
+      version: "1.0.4",
       elixir: "~> 1.8",
       deps: deps(),
       description: description(),

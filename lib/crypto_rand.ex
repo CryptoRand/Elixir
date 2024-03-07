@@ -26,7 +26,7 @@ defmodule CryptoRand do
 
   """
 
-  use Bitwise, skip_operators: true
+  import Bitwise
 
   @doc """
   Clear `CryptoRand` process dictionary entries.
